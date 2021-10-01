@@ -3,11 +3,15 @@ import Task from "./Task";
 import "./Tasks.css";
 import FlipMove from "react-flip-move";
 
+
 function Tasks({ callbackParent, taskList }) {
+  const updateList = () => {};
+
   return (
     <div className="tasks">
       <div className="tasks__high">
         <h5>High Priority</h5>
+
         <FlipMove>
           {taskList.map((task) => {
             if (task.priority === "1") {

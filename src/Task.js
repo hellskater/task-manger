@@ -7,6 +7,7 @@ import { forwardRef } from "react";
 import Modal from "react-modal";
 import UpdateModal from "./UpdateModal";
 import axios from "./axios";
+import Draggable from "react-draggable";
 
 Modal.setAppElement("#root");
 
@@ -41,54 +42,56 @@ const Task = forwardRef(
     };
 
     return (
-      <div ref={ref} className="task" style={{ backgroundColor: cardColor }}>
-        <div className="task__header">
-          <h4
-            className={`task__headerUser ${
-              priority == 3 && "task__headerUserYellow"
+      <Draggable>
+        <div ref={ref} className="task" style={{ backgroundColor: cardColor }}>
+          <div className="task__header">
+            <h4
+              className={`task__headerUser ${
+                priority == 3 && "task__headerUserYellow"
+              }`}
+            >
+              User: {user}
+            </h4>
+            <span style={{ backgroundColor: "#0b6902" }}>{date}</span>
+          </div>
+
+          <h1
+            className={`task__headerTask ${
+              priority == 3 && "task__headerTaskYellow"
             }`}
           >
-            User: {user}
-          </h4>
-          <span style={{ backgroundColor: "#0b6902" }}>{date}</span>
-        </div>
+            {message}
+          </h1>
 
-        <h1
-          className={`task__headerTask ${
-            priority == 3 && "task__headerTaskYellow"
-          }`}
-        >
-          {message}
-        </h1>
-
-        <div className="task__buttons">
-          <Button
-            className="task__buttonsDone"
-            onClick={() => setModalOpen(true)}
-          >
-            <CheckIcon />
-            Update
-          </Button>
-          <Modal
-            style={customStyles}
-            isOpen={modalOpen}
-            onRequestClose={() => setModalOpen(false)}
-          >
-            <UpdateModal
-              closeModal={closeModal}
-              id={id}
-              callbackParent={callbackParent}
-            />
-          </Modal>
-          <Button
-            onClick={() => deleteTask(id)}
-            className="task__buttonsDelete"
-          >
-            <ClearIcon />
-            Delete
-          </Button>
+          <div className="task__buttons">
+            <Button
+              className="task__buttonsDone"
+              onClick={() => setModalOpen(true)}
+            >
+              <CheckIcon />
+              Update
+            </Button>
+            <Modal
+              style={customStyles}
+              isOpen={modalOpen}
+              onRequestClose={() => setModalOpen(false)}
+            >
+              <UpdateModal
+                closeModal={closeModal}
+                id={id}
+                callbackParent={callbackParent}
+              />
+            </Modal>
+            <Button
+              onClick={() => deleteTask(id)}
+              className="task__buttonsDelete"
+            >
+              <ClearIcon />
+              Delete
+            </Button>
+          </div>
         </div>
-      </div>
+      </Draggable>
     );
   }
 );
