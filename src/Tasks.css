@@ -1,0 +1,16 @@
+.tasks {
+  flex: 0.8;
+  color: white;
+  display: flex;
+  padding: 20px;
+  font-size: 30px;
+  justify-content: space-evenly;
+  width: fit-content;
+}
+
+.tasks > * > h5 {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

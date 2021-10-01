@@ -1,0 +1,31 @@
+.searchBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 0.1px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  background-color: #132743;
+}
+
+.searchBar__field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  height: 22px;
+  color: gray;
+  background-color: #eef3f8;
+}
+
+.searchBar__field > input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 40vw;
+}

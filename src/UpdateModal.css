@@ -1,0 +1,32 @@
+.updateModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.updateModal__close {
+  background-color: red !important;
+  color: whitesmoke !important;
+  margin-bottom: 10px;
+}
+
+select,
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+}
+
+.updateModal__submit {
+  padding: 10px;
+}
+
+.updateModal__submit > Button {
+  color: whitesmoke !important;
+  background-color: green !important;
+  float: right;
+}

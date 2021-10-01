@@ -1,0 +1,23 @@
+.sidebar {
+  flex: 0.2;
+}
+
+.sidebar__addItem {
+  color: white;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 36px;
+  align-items: center;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.sidebar__addItem > h4 {
+  margin-left: 10px;
+}
+
+.sidebar__addItem:hover {
+  background-color: #26497a;
+}
